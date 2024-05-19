@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennf</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLWaAg2_LlE1UrSvCMVZQup14DZ4jUR20oQ&usqp=CAU" type="image/x-icon">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background-color: black;
+        }
+        a {
+            color: #1E90FF; /* Warna biru untuk link */
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+        }
+        a:hover {
+            text-decoration: underline; /* Garis bawah muncul saat link di-hover */
+        }
+        .animate-welcome {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+            animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        .animate-title {
+            overflow: hidden;
+            border-right: 2px solid white;
+            white-space: nowrap;
+            animation: typing-title 4s steps(30, end) 5s, blink-caret 0.75s step-end infinite 9s;
+        }
+        @keyframes typing-title {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeText = 'W E L C O M E';
+            const titleText = 'Kennf';
+
+            function typeWelcome() {
+                const welcomeElem = document.querySelector('.animate-welcome');
+                if (welcomeElem) {
+                    welcomeElem.textContent = ''; // Clear existing text
+                    let charIndex = 0;
+                    const timer = setInterval(function() {
+                        if (charIndex < welcomeText.length) {
+                            welcomeElem.textContent += welcomeText.charAt(charIndex);
+                            charIndex++;
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 100);
+                }
+            }
+
+            function typeTitle() {
+                const titleElem = document.querySelector('title');
+                if (titleElem) {
+                    titleElem.textContent = ''; // Clear existing text
+                    let charIndex = 0;
+                    const timer = setInterval(function() {
+                        if (charIndex < titleText.length) {
+                            titleElem.textContent += titleText.charAt(charIndex);
+                            charIndex++;
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 100);
+                }
+            }
+
+            // Start typing animations
+            typeWelcome();
+            setTimeout(typeTitle, 6000); // Start title typing after welcome typing animation ends
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    <main>
+        <h2>link</h2>
+        <p>nothing to see here</p>
+        <p>🔗: <a href="https://github.com/kenzdayz11" target="_blank">Github</a></p>
+        <p>ending</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kenzdayz11/p>
+    </footer>
+</body>
+</html>
